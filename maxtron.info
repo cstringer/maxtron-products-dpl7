@@ -1,0 +1,15 @@
+name = Maxtron Responsive
+description = Responsive design for MaxtronProducts.com using Bootstrap 3
+version = 1.0
+core = 7.x
+
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/bootstrap-theme.min.css
+stylesheets[all][] = css/jquery-ui.css
+stylesheets[all][] = css/jquery-ui.structure.css
+stylesheets[all][] = css/jquery-ui.theme.css
+stylesheets[all][] = css/flexslider.css
+stylesheets[all][] = css/maxtron.css
+scripts[] = js/bootstrap.min.js
+scripts[] = js/jquery.flexslider-min.js
+scripts[] = js/maxtron.js
