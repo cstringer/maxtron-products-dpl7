@@ -49,14 +49,8 @@ function maxtron_preprocess_page(&$vars)
 			{
 			$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
 			}
-		if (isset ($vars['tabs']) && $vars['node']->type == 'web_prompter')
-			{
-			$vars['tabs']['#primary'][0]['#link']['title'] = 'Prompter';
-			//$vars['tabs']['#primary'][1]['#link']['title'] = 'File';
-			unset ($vars['tabs']['#primary'][2]);
-			unset ($vars['tabs']['#primary'][3]);
-			}
 		}
+
 	if (isset ($vars['tabs']))
 		{
 		if (isset ($vars['tabs']['#primary'][0]) && $vars['logged_in'] &&
@@ -67,6 +61,12 @@ function maxtron_preprocess_page(&$vars)
 			$vars['tabs']['#primary'][2]['#link']['title'] = 'Content';
 			}
 		}
+
+	if ($is_front == TRUE)
+		{
+		drupal_set_title('MaxtronProducts.com - looking for better solutions');
+		}
+
 	}
 
 ?>

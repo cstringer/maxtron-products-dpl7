@@ -9,11 +9,11 @@
 		 animationSpeed:750 
 		});
 
-    $(".accordion").accordion({heightStyle:'content'});
-
-		$("#front-product-list").accordion('option', 'heightStyle', 'content');
-		$("#front-product-list").accordion('option', 'collapsible', true);
-		$("#front-product-list").accordion('option', 'active', false);
+    $(".accordion").accordion({
+		 heightStyle:'content',
+		 collapsible:true,
+		 active:false
+		});
 
     if ( $(window).width() < rWidth ) {
       $("#sidebar-first div.block").addClass('collapsed');

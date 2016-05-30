@@ -29,6 +29,7 @@ dd {
 }
 
 h1, h2, h3, h4 {
+ margin-top:12px;
  color:#01549e;
  font-family:Optima,Tahoma,Verdana;
  font-weight:600;
@@ -165,6 +166,9 @@ tr.even td {
  transition:all 125ms ease;
 }
 .navbar button {
+ background:linear-gradient(340deg,#eee,#fff);
+}
+.navbar button.collapsed {
  background:linear-gradient(340deg,#ccd,#fff);
 }
 .navbar button:hover {
@@ -268,7 +272,7 @@ tr.even td {
  margin:0 0 1em;
  border:1px solid #ddd;
  border-radius:3px;
- box-shadow:2px 2px 3px #f0f0f0;
+ box-shadow:inset 1px 1px 3px #f0f0f0;
  background-color:#fff;
  background:linear-gradient(270deg,#f3f3f3,#fff);
 }
@@ -285,8 +289,10 @@ tr.even td {
  padding:0.25em;
 }
 #sidebar-first ul.menu {
- margin:0.5em;
  padding-left:0.5em;
+}
+#sidebar-first div.content > ul.menu {
+ margin:0.5em 1em;
 }
 #sidebar-first ul.menu li a.active {
  font-weight:bold;
@@ -297,19 +303,18 @@ tr.even td {
   margin:0.5em auto 2em;
  }
  #sidebar-first div.block-menu ul.menu {
-  text-align:center;
+  /*text-align:center;*/
  }
  #sidebar-first div.block-menu ul.menu li {
   margin:0;
-  padding:0;
-  display:inline-block;
+  padding:0.25em;
 	font-size:16px;
  }
  #sidebar-first div.block-menu ul.menu li:after {
-  content:" · ";
+  /*content:" · ";*/
  }
  #sidebar-first div.block-menu ul.menu li:last-of-type:after {
-  content:"";
+  /*content:"";*/
  }
  #sidebar-first div.block {
   margin-bottom:0.5em;
@@ -717,6 +722,12 @@ div.region-footer ul.menu li:nth-of-type(1):before {
 #copyright {
  padding:0 2em 1em;
  font-size:0.75em;
+}
+@media (max-width:480px) {
+ div.region-footer a {
+	padding:0.2em;
+  font-size:1.4em;
+ }
 }
 
 /*=== Admin ===*/
@@ -1273,4 +1284,11 @@ button.ui-dialog-titlebar-close span.glyphicon {
 
 .ui-widget {
  font-family:"Helvetica Neue",Tahoma,Verdana;
+}
+
+#block-node-recent table {
+ width:100%;
+}
+#block-node-recent a.username {
+ color:#999;
 }
