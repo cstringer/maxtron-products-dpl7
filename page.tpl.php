@@ -6,7 +6,7 @@
    </div>
 
    <header id="header">
-	  <a href="/"><img class="himg" src="/sites/all/themes/maxtron/images/logo-waves.png" alt=""><img class="himg" src="/sites/all/themes/maxtron/images/logo-banner.png" alt="Maxtron Products, Inc."><img id="header-eye" src="/sites/all/themes/maxtron/images/logo-eye-blue.png" alt=""></a>
+	  <a href="/"><img class="himg waves" src="/sites/all/themes/maxtron/images/logo-waves.png" alt=""><div class="header-text"><span class="ht-top">Maxtron Products</span><br><span class="ht-bot">...looking for better solutions</span></div><img id="header-eye" src="/sites/all/themes/maxtron/images/logo-eye-blue.png" alt=""></a>
    </header>
 
 <?php if ($main_menu): ?>
