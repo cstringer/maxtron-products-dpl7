@@ -153,12 +153,12 @@ tr.even td {
 }
 
 #header-eye {
- transition:filter 3s linear, -webkit-filter 3s linear;
+ transition:filter 60s linear, -webkit-filter 60s linear;
 }
 #header:hover #header-eye {
- filter: hue-rotate(-360deg);
+ filter: hue-rotate(-3600deg);
  -webkit-filter: hue-rotate(-360deg);
- transition:filter 3s linear, -webkit-filter 3s linear;
+ transition:filter 60s linear, -webkit-filter 60s linear;
 }
 @media (max-width:767px) {
  #header .himg,
@@ -215,8 +215,10 @@ tr.even td {
  background-image:none !important;
  font-weight:600;
 }
+/*.navbar li:hover,*/
 .navbar li:hover {
- background-color:rgba(48,160,255,0.2) !important;
+ color:#015 !important;
+ background-color:rgba(128,198,255,0.5) !important;
  transition:all 125ms ease;
 }
 .navbar button {
@@ -274,6 +276,9 @@ tr.even td {
 	background-repeat:no-repeat;
 	background-position:right;
  }
+ .navbar ul li {
+	background-color:rgba(255,255,255,0.9);
+ }
 }
 
 @media (max-width:640px) {
@@ -283,7 +288,6 @@ tr.even td {
  .navbar ul li {
 	font-size:22px;
 	line-height:34px;
-	background-color:rgba(255,255,255,0.9);
  }
 }
 
@@ -659,8 +663,8 @@ a.tabledrag-handle .handle {
 #user-profile-form,
 #user-register-form {
  padding:1em;
- background-color:#f6f6f6;
- border:1px solid #eee;
+ background-color:#fff;
+ border:1px solid #eaeae0;
  border-radius:8px;
 }
 #user-login label,
