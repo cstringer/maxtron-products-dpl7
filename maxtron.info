@@ -12,4 +12,5 @@ stylesheets[all][] = css/flexslider.css
 stylesheets[all][] = css/maxtron.css
 scripts[] = js/bootstrap.min.js
 scripts[] = js/jquery.flexslider-min.js
+scripts[] = js/ga.js
 scripts[] = js/maxtron.js
