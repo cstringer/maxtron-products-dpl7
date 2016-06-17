@@ -11,7 +11,7 @@
 
 <?php if ($main_menu): ?>
    <nav id="main-menu" class="navbar navbar-default">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Menu">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Main Menu">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -38,7 +38,7 @@
 
 <?php print $messages; ?>
 
-   <div id="main-wrapper" class="" role="main"><div id="main" class="container-fluid<?php if ($is_front) { echo 
+   <div id="main-wrapper" class=""><div id="main" class="container-fluid<?php if ($is_front) { echo 
 " front"; } ?>">
 
 <?php if ($page['highlighted']): ?>
