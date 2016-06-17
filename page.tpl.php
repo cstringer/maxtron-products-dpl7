@@ -1,6 +1,6 @@
   <div id="page-wrapper"><div id="page">
 
-   <div class="no-css">
+   <div id="top" class="no-css">
     <a href="#main" class="sr-only sr-only-focusable">Go to main content</a>
     <br />
    </div>
@@ -11,7 +11,7 @@
 
 <?php if ($main_menu): ?>
    <nav id="main-menu" class="navbar navbar-default">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Menu">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -52,9 +52,9 @@
     </div></div> <!-- /.section, /#sidebar-first -->
 	 <hr class="sr-only" />
 
-	 <div id="content" class="column col-md-9"><div class="section">
+	 <div id="content" class="column col-md-9" role="main"><div class="section">
 <?php } else { ?>
-	 <div id="content" class="column col-md-12"><div class="section">
+	 <div id="content" class="column col-md-12" role="main"><div class="section">
 <?php } ?>
 
 	  <a id="main-content"></a>
@@ -66,7 +66,9 @@
     <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
 
 		<?php print render($title_prefix); ?>
-		<?php if (!$is_front && $title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+		<?php if ($title) { ?>
+		<h1 class="title" id="page-title"><?php print $title; ?></h1>
+		<?php } ?>
 		<?php print render($title_suffix); ?>
 
 	  <?php print render($page['help']); ?>
