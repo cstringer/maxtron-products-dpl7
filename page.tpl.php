@@ -1,23 +1,32 @@
   <div id="page-wrapper"><div id="page">
 
-   <div id="top" class="no-css">
-    <a href="#main" class="sr-only sr-only-focusable">Go to main content</a>
-    <br />
-   </div>
+    <div id="top" class="no-css">
+      <a href="#main" class="sr-only sr-only-focusable">Go to main content</a>
+      <br />
+    </div>
 
-   <header id="header">
-	  <a href="/"><img class="himg waves" src="/sites/all/themes/maxtron/images/logo-waves.png" alt=""><div class="header-text"><span class="ht-top">Maxtron Products</span><br><span class="ht-bot">...looking for better solutions</span></div><img id="header-eye" src="/sites/all/themes/maxtron/images/logo-eye-blue.png" alt=""></a>
-   </header>
+    <header id="header">
+      <a href="/">
+        <img class="himg waves" src="/sites/all/themes/maxtron/images/logo-waves.png" alt="">
+        <div class="header-text">
+          <span class="ht-top">Maxtron Products</span><br>
+          <span class="ht-bot">...looking for better solutions</span>
+        </div>
+        <img id="header-eye" src="/sites/all/themes/maxtron/images/logo-eye-blue.png" alt="">
+      </a>
+    </header>
 
-<?php if ($main_menu): ?>
-   <nav id="main-menu" class="navbar navbar-default">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Main Menu">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		 </button>
-		<div id="navbar" class="navbar-collapse collapse">
+  <?php if ($main_menu): ?>
+    <nav id="main-menu" class="navbar navbar-default">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar" aria-label="Main Menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+		  </button>
+      <div id="navbar" class="navbar-collapse collapse">
     <?php print theme('links__system_main_menu', array(
        'links' => $main_menu,
        'attributes' => array(
@@ -30,62 +39,74 @@
          'class' => array('element-invisible'),
        ),
      )); ?>
-    </div>
-   </nav> <!-- /#main-menu -->
-<?php endif; ?>
+      </div>
+    </nav> <!-- /#main-menu -->
+  <?php endif; ?>
 
-   <hr class="sr-only" />
+    <hr class="sr-only" />
 
-<?php print $messages; ?>
+  <?php print $messages; ?>
 
-   <div id="main-wrapper" class=""><div id="main" class="container-fluid<?php if ($is_front) { echo 
-" front"; } ?>">
+    <div id="main-wrapper" class=""><div id="main" class="container-fluid<?php if ($is_front) { echo " front"; } ?>">
 
-<?php if ($page['highlighted']): ?>
-	 <div id="highlighted" class="container-fluid"><?php print render($page['highlighted']); ?></div>
-<?php endif; ?>
+    <?php if ($page['highlighted']): ?>
+      <div id="highlighted" class="container-fluid">
+    <?php print render($page['highlighted']); ?>
+      </div>
+    <?php endif; ?>
 
-<?php //if (!$is_front && $page['sidebar_first']): ?>
-<?php if ($page['sidebar_first']) { ?>
-    <div id="sidebar-first" class="col-md-3"><div class="section">
- <?php print render($page['sidebar_first']); ?>
-    </div></div> <!-- /.section, /#sidebar-first -->
-	 <hr class="sr-only" />
+    <?php //if (!$is_front && $page['sidebar_first']): ?>
+    <?php if ($page['sidebar_first']) { ?>
+      <div id="sidebar-first" class="col-md-3"><div class="section">
+     <?php print render($page['sidebar_first']); ?>
+      </div></div> <!-- /.section, /#sidebar-first -->
 
-	 <div id="content" class="column col-md-9" role="main"><div class="section">
-<?php } else { ?>
-	 <div id="content" class="column col-md-12" role="main"><div class="section">
-<?php } ?>
+	    <hr class="sr-only" />
 
-	  <a id="main-content"></a>
+	    <div id="content" class="column col-md-9" role="main"><div class="section">
+    <?php } else { ?>
+	    <div id="content" class="column col-md-12" role="main"><div class="section">
+    <?php } ?>
 
-	  <?php if ($breadcrumb): ?>
-		<div id="breadcrumb"><span class="sr-only">Current Path: </span> <?php print $breadcrumb; ?></div>
-	  <?php endif; ?>
+        <a id="main-content"></a>
 
-    <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+      <?php if ($breadcrumb): ?>
+        <div id="breadcrumb">
+          <span class="sr-only">Current Path: </span> <?php print $breadcrumb; ?>
+        </div>
+      <?php endif; ?>
 
-		<?php print render($title_prefix); ?>
-		<?php if ($title) { ?>
-		<h1 class="title" id="page-title"><?php print $title; ?></h1>
-		<?php } ?>
-		<?php print render($title_suffix); ?>
+      <?php if ($tabs): ?>
+        <div class="tabs">
+        <?php print render($tabs); ?>
+        </div>
+      <?php endif; ?>
 
-	  <?php print render($page['help']); ?>
+      <?php print render($title_prefix); ?>
+      <?php if ($title) { ?>
+        <h1 class="title" id="page-title"><?php print $title; ?></h1>
+      <?php } ?>
+      <?php print render($title_suffix); ?>
 
-	  <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+      <?php print render($page['help']); ?>
 
-	  <?php print render($page['content']); ?>
+      <?php if ($action_links): ?>
+        <ul class="action-links">
+        <?php print render($action_links); ?>
+        </ul>
+      <?php endif; ?>
 
-	  <?php print $feed_icons; ?>
-	 </div></div> <!-- /.section, /#content -->
+      <?php print render($page['content']); ?>
+
+      <?php print $feed_icons; ?>
+     </div></div> <!-- /.section, /#content -->
 
    </div></div><!-- /#main, /#main-wrapper -->
 
    <hr class="sr-only" />
 
    <div class="no-css">
-    <a href="#top">Go to top</a> | <a href="#main-content">Go to main content</a>
+     <a href="#top">Go to top</a> | <a href="#main-content">Go to main content</a>
    </div>
 
 <?php print render($page['footer']); ?>

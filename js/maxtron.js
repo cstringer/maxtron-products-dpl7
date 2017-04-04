@@ -1,42 +1,57 @@
 (function($){
-    $(document).ready( function() {
-
+    $(document).ready(function() {
         var rWidth = 976,
-            currWidth = $(window).width();
+            currWidth = $(window).width(),
+            sels = {
+                accordion: '.accordion',
+                slider: '.flexsider',
+                sidebar: '#sidebar-first div.block',
+                content: 'div.content'
+            },
+            cls = {
+                expanded: 'expanded',
+                collapsed: 'collapsed'
+            };
 
-        $(".flexslider").flexslider({
-            animation:"slide",
-            slideshowSpeed:5000,
-            animationSpeed:750 
+        $(sels.slider).flexslider({
+            animation: 'slide',
+            slideshowSpeed: 5000,
+            animationSpeed: 750 
         });
 
-        $(".accordion").accordion({
-            heightStyle:'content',
-            collapsible:true,
-            active:false
+        $(sels.accordion).accordion({
+            heightStyle: 'content',
+            collapsible: true,
+            active: false
         });
 
         if ( $(window).width() < rWidth ) {
-            $("#sidebar-first div.block").addClass('collapsed');
+            $(sels.sidebar).addClass(cls.collapsed);
         }
 
-        $(window).resize( function() {
-            if ($(window).width() != currWidth) {
+        $(window).on('resize', function() {
+            if ($(window).width() !== currWidth) {
                 currWidth = $(window).width();
                 if (currWidth < rWidth ) {
-                    $("#sidebar-first div.block").addClass('collapsed')
-                        .removeClass('expanded').find("div.content").hide();
+                    $(sels.sidebar).addClass(cls.collapsed)
+                                   .removeClass(cls.expanded)
+                                   .find(sels.content)
+                                   .hide();
                 } else {
-                    $("#sidebar-first div.block").addClass('expanded')
-                        .removeClass('collapsed').find("div.content").show();
+                    $(sels.sidebar).addClass(cls.expanded)
+                                   .removeClass(cls.collapsed)
+                                   .find(sels.content)
+                                   .show();
                 }
             }
         });
 
-        $("#sidebar-first div.block h2").on("click", function(e) {
-            if ( $(window).width() < rWidth ) {
-                $(this).parent().find("div.content").slideToggle();
-                $(this).parent().toggleClass('collapsed').toggleClass('expanded');
+        $(sels.sidebar).on('click', 'h2', function(e) {
+            if ($(window).width() < rWidth) {
+                $(this).parent().toggleClass(cls.collapsed)
+                                .toggleClass(cls.expanded)
+                                .find(sels.content)
+                                .slideToggle();
             }
         });
 
